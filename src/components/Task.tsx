@@ -12,7 +12,9 @@ export const Task = ({task, columnId}: TaskProps) => {
     const removeTask = useBoardStore((state) => state.removeTask);
 
     return (
-        <div className="flex px-2 py-3 border-2">
+        <div className="flex px-2 py-3 border-2 justify-between">
+            {/* sandwich div to drag and drop */}
+            <div className="p-2">☰</div>
             <input
                 type="text"
                 value={text}
