@@ -29,7 +29,7 @@ const INITIAL_COLUMNS: Column[] = [
     { id: 'done', title: 'Done', tasks: [] },
 ];
 
-export const useColumnStore = create<Store>((set) => ({
+export const useBoardStore = create<Store>((set) => ({
     columns: INITIAL_COLUMNS,
 
     addColumn: (title) =>

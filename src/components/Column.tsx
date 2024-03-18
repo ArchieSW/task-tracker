@@ -1,5 +1,5 @@
 import 'react';
-import {Column as ColumnType, useColumnStore} from "../store/useColumnStore.ts";
+import {Column as ColumnType, useBoardStore} from "../store/useBoardStore.ts";
 import {Task} from "./Task.tsx";
 import {Draggable} from "react-beautiful-dnd";
 
@@ -8,7 +8,7 @@ interface ColumnProps {
 }
 
 export const Column = ({column}: ColumnProps) => {
-    const addTask = useColumnStore((state) => state.addTask);
+    const addTask = useBoardStore((state) => state.addTask);
 
     return (
         <div className="bg-white p-4 rounded shadow max-w-sm min-w-60">

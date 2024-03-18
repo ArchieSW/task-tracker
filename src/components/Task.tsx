@@ -1,5 +1,5 @@
 import 'react';
-import {Task as TaskType, useColumnStore} from "../store/useColumnStore.ts";
+import {Task as TaskType, useBoardStore} from "../store/useBoardStore.ts";
 
 interface TaskProps {
     task: TaskType;
@@ -8,8 +8,8 @@ interface TaskProps {
 
 export const Task = ({task, columnId}: TaskProps) => {
     const {id, text} = task;
-    const editTask = useColumnStore((state) => state.editTask);
-    const removeTask = useColumnStore((state) => state.removeTask);
+    const editTask = useBoardStore((state) => state.editTask);
+    const removeTask = useBoardStore((state) => state.removeTask);
 
     return (
         <div className="flex px-2 py-3 border-2">

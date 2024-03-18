@@ -1,5 +1,5 @@
 import "react";
-import {Column as ColumnType, useColumnStore} from "../store/useColumnStore.ts";
+import {Column as ColumnType, useBoardStore} from "../store/useBoardStore.ts";
 import {Column} from "./Column.tsx";
 import {DragDropContext, Droppable} from "react-beautiful-dnd";
 
@@ -10,7 +10,7 @@ interface BoardProps {
 
 export const Board = ({columns}: BoardProps) => {
 
-    const moveTask = useColumnStore((state) => state.moveTask);
+    const moveTask = useBoardStore((state) => state.moveTask);
 
     const handleDragEnd = (result: any) => {
         if (!result.destination) return;

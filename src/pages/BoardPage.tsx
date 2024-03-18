@@ -1,9 +1,9 @@
-import {useColumnStore} from "../store/useColumnStore.ts";
+import {useBoardStore} from "../store/useBoardStore.ts";
 import {Board} from "../components/Board.tsx";
 
 
 export const BoardPage = () => {
-    const columns = useColumnStore((state) => state.columns);
+    const columns = useBoardStore((state) => state.columns);
 
     return (
         <div className="container">
