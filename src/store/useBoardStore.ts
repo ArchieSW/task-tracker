@@ -35,7 +35,7 @@ const INITIAL_COLUMNS: Column[] = [
 
 export const useBoardStore = create(
     persist<Store>(
-        (set, get) => ({
+        (set) => ({
             columns: INITIAL_COLUMNS,
 
             addColumn: (title) =>

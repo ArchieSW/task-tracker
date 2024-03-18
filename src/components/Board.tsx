@@ -1,7 +1,7 @@
 import "react";
 import {Column as ColumnType, useBoardStore} from "../store/useBoardStore.ts";
 import {Column} from "./Column.tsx";
-import {DragDropContext, Droppable} from "react-beautiful-dnd";
+import {DragDropContext, Droppable, OnDragEndResponder} from "react-beautiful-dnd";
 
 
 interface BoardProps {
@@ -12,7 +12,7 @@ export const Board = ({columns}: BoardProps) => {
 
     const moveTask = useBoardStore((state) => state.moveTask);
 
-    const handleDragEnd = (result: any) => {
+    const handleDragEnd: OnDragEndResponder = (result) => {
         if (!result.destination) return;
 
         const { source, destination } = result;
